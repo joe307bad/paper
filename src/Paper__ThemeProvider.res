@@ -32,17 +32,24 @@ module Theme = {
     type t
     type configured
 
-    @deriving(abstract)
     type font = {
       fontFamily: string,
       fontWeight: string,
+    }
+
+    @deriving(abstract)
+    type platformFont = {
+      regular: font,
+      thin: font,
+      medium: font,
+      light: font,
     }
 
     @module("react-native-paper")
     external configureFonts: t => configured = "configureFonts"
 
     @obj
-    external make: (~regular: font, ~medium: font, ~light: font, ~thin: font) => t = ""
+    external make: (~default: platformFont) => t = ""
   }
 
   module Animation = {
