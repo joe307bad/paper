@@ -83,3 +83,21 @@ external make: (~theme: Theme.t=?, ~children: React.element) => React.element = 
 external defaultTheme: Theme.t = "DefaultTheme"
 
 @module("react-native-paper") external darkTheme: Theme.t = "DarkTheme"
+
+type colors = {
+    primary: string,
+    accent: string,
+    background: string,
+    surface: string,
+    error: string,
+    text: string,
+    disabled: string,
+    placeholder: string,
+    backdrop: string
+}
+
+type theme = {
+  colors: colors
+}
+
+@module("react-native-paper") external useTheme: () => theme = "useTheme"
