@@ -49,7 +49,7 @@ module Theme = {
     external configureFonts: t => configured = "configureFonts"
 
     @obj
-    external make: (~default: platformFont) => t = ""
+    external make: (~default: platformFont, ~ios: platformFont) => t = ""
   }
 
   module Animation = {
